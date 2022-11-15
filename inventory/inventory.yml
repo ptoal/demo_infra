@@ -1,0 +1,14 @@
+---
+all:
+  children:
+    rhel_app_server:
+      hosts:
+        rhel8-1:
+          ip: 192.168.20.101
+        rhel8-2:
+          ip: 192.168.20.102
+        rhel8-3:
+          ip: 192.168.20.103
+        rhel8-4:
+          ip: 192.168.20.104
+...
