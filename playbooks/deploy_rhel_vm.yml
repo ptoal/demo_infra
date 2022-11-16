@@ -6,7 +6,6 @@
     - ../vaults/template.yml
   vars:
     vm_memory: 4096
-  serial: 1
 
   tasks:
   - name: Assert that RAM is less than 16384
@@ -48,6 +47,7 @@
       template: 'rhel81-x64-v1'
       wait_for_ip_address: false
     delegate_to: localhost
+    throttle: 1
 
 - name: Deploy RHEL8 VM
   hosts: rhel_app_server
