@@ -10,4 +10,13 @@ resources:
     resources:
       - folder:
         - Demo
+hostnames:
+  - 'config.name'
+properties:
+  - 'config.name'
+  - 'config.guestId'
+  - 'guest.hostName'
+  - 'guest.ipAddress'
+  - 'guest.guestFamily'
+  - 'guest.ipStack'
 ...
