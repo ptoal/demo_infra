@@ -4,4 +4,10 @@ plugin: community.vmware.vmware_vm_inventory
 strict: false
 validate_certs: false
 with_tags: true
+resources:
+  - datacenter:
+      - SagelyDC
+    resources:
+      - folder:
+        - Demo
 ...
