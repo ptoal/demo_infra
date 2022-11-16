@@ -7,10 +7,10 @@ all:
           ansible_host: 192.168.20.101
         rhel8-2:
           ansible_host: 192.168.20.102
-        rhel8-3:
-          ansible_host: 192.168.20.103
-        rhel8-4:
-          ansible_host: 192.168.20.104
+#        rhel8-3:
+#          ansible_host: 192.168.20.103
+#        rhel8-4:
+#          ansible_host: 192.168.20.104
     mysql:
       hosts:
         mysql1:
