@@ -4,10 +4,16 @@
   gather_facts: false
   vars_files:
     - ../vaults/template.yml
+  vars:
+    vm_memory: 4096
 
   tasks:
+  - name: Assert that RAM is less than 16384
+    ansible.builtin.assert:
+      that: vm_memory <= 16384
+
   - name: Create the VM
-    vmware_guest:
+    community.vmware.vmware_guest:
       datacenter: 'SagelyDC'
       folder: /vm/Demo
       resource_pool: Demo
@@ -26,8 +32,10 @@
           gateway: 192.168.16.1
           dns_servers:
             - 192.168.16.1
+          start_connected: true
+          type: static
       hardware:
-        memory_mb: 4096
+        memory_mb: '{{ vm_memory }}'
         num_cpus: 2
       customization:
         dns_servers:
