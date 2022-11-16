@@ -1,0 +1,19 @@
+- name: Install, configure and run Sensu agents
+  hosts: rhel_app_server
+  become: true
+
+  tasks:
+    - name: Install agent
+      ansible.builtin.include_role:
+        name: sensu.sensu_go.agent
+      vars:
+        version: 6.0.0
+        agent_config:
+          deregister: true
+          backend-url:
+            - "ws://192.168.20.50:8081"
+          name: '{{ inventory_hostname }}'
+          keepalive-interval: 5
+          keepalive-timeout: 10
+          subscriptions:
+            - linux

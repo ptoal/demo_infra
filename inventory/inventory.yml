@@ -4,11 +4,15 @@ all:
     rhel_app_server:
       hosts:
         rhel8-1:
-          ip: 192.168.20.101
+          ansible_host: 192.168.20.101
         rhel8-2:
-          ip: 192.168.20.102
+          ansible_host: 192.168.20.102
         rhel8-3:
-          ip: 192.168.20.103
+          ansible_host: 192.168.20.103
         rhel8-4:
-          ip: 192.168.20.104
+          ansible_host: 192.168.20.104
+    mysql:
+      hosts:
+        mysql1:
+          ansible_host: 192.168.20.48
 ...

@@ -1,0 +1,12 @@
+---
+mysql_root_password: "{{ vault_local_administrator_password }}"
+
+mysql_databases:
+  - name: wordpress
+    encoding: utf8
+
+mysql_users:
+  - name: wordpress
+    host: "%"
+    password: "{{ vault_local_administrator_password }}"
+    priv: "wordpress.*:ALL"
